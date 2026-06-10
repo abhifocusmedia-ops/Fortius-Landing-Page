@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./navbar.css";
-import logo from "../../assets/logos/fortius-logo.png";
+import logo from "/assets/logos/fortius-logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 

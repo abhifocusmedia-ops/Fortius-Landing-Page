@@ -1,6 +1,6 @@
 import "./programs.css";
 import { motion } from "framer-motion";
-import Programbg from "../../assets/images/banner.png";
+import Programbg from "/assets/images/banner.png";
 
 const programs = [
     {

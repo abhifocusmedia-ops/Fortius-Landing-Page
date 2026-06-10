@@ -1,7 +1,7 @@
 .hero {
     min-height: 100vh;
     position: relative;
-    background:url("../../assets/images/hero-image4.jpeg");
+    background:url("/assets/images/hero-image4.jpeg");
     background-size: cover;
     background-position: center;
     overflow: hidden;

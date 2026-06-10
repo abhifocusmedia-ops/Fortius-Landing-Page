@@ -1,6 +1,6 @@
 import "./footer.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import logo from "../../assets/logos/fortius-logo.png";
+import logo from "/assets/logos/fortius-logo.png";
 
 function Footer() {
   return (
