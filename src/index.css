@@ -37,6 +37,10 @@ h2,h3{
 .footer-col li{
   font-family: "Montserrat",sans-serif;
 }
-
+.nav-btn,
+.hero-buttons,
+.cta-buttons{
+  font-family: "Monstserrat",sans-serif;
+}
 
 

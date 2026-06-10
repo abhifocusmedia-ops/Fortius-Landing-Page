@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Navbar setShowModal={setShowModal} />
-      <Hero />
+      <Hero setShowModal={setShowModal}/>
       <Stats />
       <Programs/>
       <WhyChoose/>

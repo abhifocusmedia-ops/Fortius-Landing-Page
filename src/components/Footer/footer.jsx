@@ -1,58 +1,87 @@
 import "./footer.css";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import logo from "/assets/logos/fortius-logo.png";
+import { FaPaperPlane } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
 
       <div className="footer-container">
 
-        <div className="footer-col">
-            <div className="logo">
-                <img src={logo} alt="Fortius Logo" />
-            </div>
-        <p>
+        {/* Left Side */}
+        <div className="footer-left">
+
+          <img
+            src={logo}
+            alt="Fortius Logo"
+            className="footer-logo"
+          />
+
+          <p>
             Building active, confident and happy kids through
             sports, creativity and fitness.
-        </p>
-        </div>
-
-        <div className="footer-col">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#whychoose">Why Fortius</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h3>Programs</h3>
-          <ul>
-            <li><a href="#programs">Football</a></li>
-            <li><a href="#programs">Badminton</a></li>
-            <li><a href="#programs">Yoga</a></li>
-            <li><a href="#programs">Dance</a></li>
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h3>Contact</h3>
-
-          <p>
-            <FaMapMarkerAlt /> Hyderabad
           </p>
 
-          <p>
-            <FaPhoneAlt /> +91 98765 43210
-          </p>
+          <div className="footer-contact-info">
+
+  <div className="contact-item">
+    <span>📞</span>
+    <p>+91 98765 43210</p>
+  </div>
+
+  <div className="contact-item">
+   
+    <span>✉️</span>
+    <p>info@fortiusacademy.com</p>
+  </div>
+
+  <div className="contact-item">
+    <span>📍</span>
+    <p>Hyderabad, Telangana</p>
+  </div>
+
+</div>
+
+        </div>
+
+        {/* Right Side Form */}
+        <div className="footer-form-card">
+
+          <h2>Get In Touch</h2>
 
           <p>
-            <FaEnvelope /> info@fortius.com
+            Register your child or send us an enquiry.
           </p>
+
+          <form className="footer-form">
+
+            <input
+              type="text"
+              placeholder="Parent Name"
+            />
+
+            <input
+              type="email"
+              placeholder="Email Address"
+            />
+
+            <input
+              type="tel"
+              placeholder="Phone Number"
+            />
+
+            <textarea
+              rows="4"
+              placeholder="Your Message"
+            ></textarea>
+
+            <button type="submit">
+              Send Message
+              <FaPaperPlane />
+            </button>
+
+          </form>
+
         </div>
 
       </div>

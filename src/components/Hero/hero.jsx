@@ -4,7 +4,7 @@ import { FaFutbol, FaPaintBrush } from "react-icons/fa";
 import { GiShuttlecock, GiMeditation } from "react-icons/gi";
 import { MdSportsKabaddi } from "react-icons/md";
 
-function Hero() {
+function Hero({ setShowModal }) {
     return (
     <section className="hero" id="hero">
 
@@ -67,12 +67,12 @@ function Hero() {
             </div>
 
             <div className="hero-buttons">
-            <button className="primary-btn">
+            <button className="primary-btn"  onClick={() => setShowModal(true)}>
                 Register Now
             </button>
 
-            <button className="secondary-btn">
-                Explore Program
+            <button className="secondary-btn" >
+                <a href="#programs"> Explore Program</a>
             </button>
             </div>
 

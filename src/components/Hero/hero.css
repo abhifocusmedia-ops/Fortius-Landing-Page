@@ -1,7 +1,7 @@
 .hero {
     min-height: 100vh;
     position: relative;
-    background:url("/assets/images/hero-image4.jpeg");
+    background:url("./public/assets/images/hero-image4.jpeg");
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -12,7 +12,7 @@
 
 
 .hero-container{
-    width: 90%;
+    padding: 24px 8%;
     margin:auto;
     display:flex;
     align-items:center;
@@ -40,19 +40,17 @@
     color:white;
     margin:20px 0;
     font-weight:800;
-    text-shadow: 0 0 20px rgba(255,255,255,.15),0 0 40px rgba(255,230,0,.15);
 }
 
 .hero-content h1 span{
     display:block;
-    color:#d1ff04;
-    text-shadow:0 0 15px rgba(255,230,0,.5),0 0 30px rgba(255,230,0,.25);
+    color:#C9FE34;
     font-weight: 800;
 }
 
 .hero-mini-title{
     display:block;
-    color:#d1ff04;
+    color:#C9FE34;
     font-size:.95rem;
     letter-spacing:3px;
     margin:20px 0 10px;
@@ -88,7 +86,7 @@
 
 .activity-chips span:hover{
     transform:translateY(-5px);
-    border-color:#d1ff04;
+    border-color:#C9FE34;
 }
 
 .hero-buttons{
@@ -114,8 +112,8 @@
 
 .secondary-btn{
     background:transparent;
-    border:2px solid #d1ff04;
-    color:#d1ff04;
+    border:2px solid #C9FE34;
+    color:#C9FE34;
     padding:15px 35px;
     border-radius:40px;
     cursor:pointer;
@@ -123,8 +121,13 @@
 }
 .secondary-btn:hover{
     transform:translateY(-4px);
-    background:#d1ff04;
+    background:#C9FE34;
     color:#071426;
+}
+.secondary-btn a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
 }
 
 .hero-right{
@@ -142,7 +145,7 @@
     padding:25px;
     border-radius:25px;
     color:white;
-    animation:float 4s ease-in-out infinite;
+    animation:float 4s ease-in-out infinite; 
     cursor: pointer;
     transition: .4s;
 }
@@ -152,7 +155,7 @@
 }
 
 .offer-card{
-    border-left:5px solid #d1ff04;
+    border-left:5px solid #C9FE34;
 }
 
 .price-card{
@@ -160,7 +163,7 @@
 }
 
 .floating-card h2{
-    color:#d1ff04;
+    color:#C9FE34;
     font-size:2rem;
 }
 
@@ -181,7 +184,7 @@
 .shape2{
     width:250px;
     height:250px;
-    background:#bfff00;
+    background:#C9FE34;
     bottom:-50px;
     right:-50px;
 }
@@ -189,7 +192,7 @@
 .shape3{
     width:180px;
     height:180px;
-    background:#d1ff04;
+    background:#C9FE34;
     top:30%;
     right:20%;
 }

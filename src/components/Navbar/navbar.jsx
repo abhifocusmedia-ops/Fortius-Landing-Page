@@ -34,7 +34,7 @@ function Navbar({ setShowModal }) {
             </li>
 
             <li>
-                <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+                <a href="#footer" onClick={() => setMenuOpen(false)}>Contact</a>
             </li>
         </ul>
 
