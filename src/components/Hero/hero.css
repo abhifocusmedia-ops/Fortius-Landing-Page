@@ -1,7 +1,7 @@
 .hero {
     min-height: 100vh;
     position: relative;
-    background:url("./public/assets/images/hero-image4.jpeg");
+    background:url("/assets/images/hero-image4.jpeg");
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -35,7 +35,7 @@
 }
 
 .hero-content h1{
-    font-size:5rem;
+    font-size:4rem;
     line-height:0.95;
     color:white;
     margin:20px 0;
