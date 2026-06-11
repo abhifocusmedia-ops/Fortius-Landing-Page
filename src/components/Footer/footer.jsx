@@ -113,17 +113,22 @@ const handleSubmit = (e) => {
 
   <div className="contact-item">
     <span>📞</span>
-    <p>+91 98765 43210</p>
+    <p>(678) 505-0464</p>
   </div>
 
   <div className="contact-item">
     <span>✉️</span>
-    <p>info@fortiusacademy.com</p>
+    <p>fortius@fsaatl.com</p>
   </div>
 
   <div className="contact-item">
     <span>📍</span>
-    <p>Hyderabad, Telangana</p>
+    <p>Fortius @Game&Grill: 5905 Ronald Reagan Blvd, Alpharetta, Georgia 30005</p>  
+  </div>
+
+  <div className="contact-item">
+    <span>📍</span>
+    <p>Fortius @ARC: 2711 Pine Grove Rd, Cumming, Georgia 30041</p>  
   </div>
 
 </div>
