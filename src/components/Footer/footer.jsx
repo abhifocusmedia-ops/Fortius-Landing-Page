@@ -1,8 +1,29 @@
+import { useState } from "react";
 import "./footer.css";
 import logo from "/assets/logos/fortius-logo.png";
 import { FaPaperPlane } from "react-icons/fa";
 
 function Footer() {
+
+  const [contactData, setContactData] = useState({
+  parentName: "",
+  email: "",
+  phone: "",
+  message: "",
+});
+
+const handleChange = (e) => {
+  setContactData({
+    ...contactData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  console.log(contactData);
+};
   return (
     <footer className="footer" id="footer">
 
@@ -53,27 +74,42 @@ function Footer() {
             Register your child or send us an enquiry.
           </p>
 
-          <form className="footer-form">
+         <form
+  className="footer-form"
+  onSubmit={handleSubmit}
+>
+
+           <input
+  type="text"
+  name="parentName"
+  placeholder="Parent Name"
+  value={contactData.parentName}
+  onChange={handleChange}
+/>
 
             <input
-              type="text"
-              placeholder="Parent Name"
-            />
+  type="email"
+  name="email"
+  placeholder="Email Address"
+  value={contactData.email}
+  onChange={handleChange}
+/>
 
             <input
-              type="email"
-              placeholder="Email Address"
-            />
-
-            <input
-              type="tel"
-              placeholder="Phone Number"
-            />
+  type="tel"
+  name="phone"
+  placeholder="Phone Number"
+  value={contactData.phone}
+  onChange={handleChange}
+/>
 
             <textarea
-              rows="4"
-              placeholder="Your Message"
-            ></textarea>
+  rows="4"
+  name="message"
+  placeholder="Your Message"
+  value={contactData.message}
+  onChange={handleChange}
+></textarea>
 
             <button type="submit">
               Send Message

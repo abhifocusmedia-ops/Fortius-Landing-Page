@@ -4,11 +4,21 @@ import { useState } from "react";
 function RegisterModal({ isOpen, onClose }) {
     if (!isOpen) return null;
 
-const [parentName, setParentName] = useState("");
-const [childName, setChildName] = useState("");
-const [childAge, setChildAge] = useState("");
-const [phone, setPhone] = useState("");
-const [activity, setActivity] = useState("");
+const [formData, setFormData] = useState({
+  parentName: "",
+  childName: "",
+  childAge: "",
+  phone: "",
+  activity: "",
+});
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
     return (
     <div className="modal-overlay">
         <div className="modal-box">
@@ -25,60 +35,81 @@ const [activity, setActivity] = useState("");
     e.preventDefault();
 
     if (
-      !parentName ||
-      !childName ||
-      !childAge ||
-      !phone ||
-      !activity
-    ) {
-      alert("Please fill all fields");
-      return;
-    }
-    if (phone.length !== 10) {
+  !formData.parentName ||
+  !formData.childName ||
+  !formData.childAge ||
+  !formData.phone ||
+  !formData.activity
+) {
+  alert("Please fill all fields");
+  return;
+}
+    if (formData.phone.length !== 10) {
   alert("Phone number must be 10 digits");
   return;
 }
 
- if (childAge < 4 || childAge > 16) {
-    alert("Age must be between 4 and 16");
-    return;
-  }
+ if (formData.childAge < 4 || formData.childAge > 16) {
+  alert("Age must be between 4 and 16");
+  return;
+}
 
-    console.log({
-      parentName,
-      childName,
-      childAge,
-      phone,
-      activity,
-    });
+   
+console.log(formData);
+alert("Registration Submitted Successfully!");
+   setFormData({
+  parentName: "",
+  childName: "",
+  childAge: "",
+  phone: "",
+  activity: "",
+});
 
     onClose();
   }}
 >
-
-        <input type="text" placeholder="Parent Name" value={parentName}
-            onChange={(e) => setParentName(e.target.value)}/>
-
-        <input type="text" placeholder="Child Name" value={childName} onChange={(e) => setChildName(e.target.value)}
+<input
+  type="text"
+  name="parentName"
+  placeholder="Parent Name"
+  value={formData.parentName}
+  onChange={handleChange}
 />
 
-        <input type="number" placeholder="Child Age" value={childAge}
-                onChange={(e) => setChildAge(e.target.value)}
+        <input
+  type="text"
+  name="childName"
+  placeholder="Child Name"
+  value={formData.childName}
+  onChange={handleChange}
+/>
+        <input
+  type="number"
+  name="childAge"
+  placeholder="Child Age"
+  value={formData.childAge}
+  onChange={handleChange}
 />
 
-        <input type="tel" placeholder="Phone Number" value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+        <input
+  type="tel"
+  name="phone"
+  placeholder="Phone Number"
+  value={formData.phone}
+  onChange={handleChange}
 />
 
-        <select value={activity}
-                onChange={(e) => setActivity(e.target.value)}
+       <select
+  name="activity"
+  value={formData.activity}
+  onChange={handleChange}
 >
-            <option>Select Activity</option>
-            <option>Football</option>
-            <option>Badminton</option>
-            <option>Yoga</option>
-            <option>Dance</option>
-        </select>
+  <option value="">Select Activity</option>
+  <option>Football</option>
+  <option>Badminton</option>
+  <option>Yoga</option>
+  <option>Dance</option>
+</select>
 
         <button
             type="submit"
