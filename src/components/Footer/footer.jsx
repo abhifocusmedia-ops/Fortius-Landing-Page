@@ -5,6 +5,11 @@ import { FaPaperPlane } from "react-icons/fa";
 
 function Footer() {
 
+  const [errors, setErrors] = useState({
+  email: "",
+  phone: "",
+});
+
   const [contactData, setContactData] = useState({
   parentName: "",
   email: "",
@@ -13,16 +18,53 @@ function Footer() {
 });
 
 const handleChange = (e) => {
+  const { name, value } = e.target;
+
   setContactData({
     ...contactData,
-    [e.target.name]: e.target.value,
+    [name]: value,
   });
+
+  if (name === "email") {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (value && !emailRegex.test(value)) {
+      setErrors((prev) => ({
+        ...prev,
+        email: "Please enter a valid email address",
+      }));
+    } else {
+      setErrors((prev) => ({
+        ...prev,
+        email: "",
+      }));
+    }
+  }
+
+  if (name === "phone") {
+    if (value.length > 0 && value.length !== 10) {
+      setErrors((prev) => ({
+        ...prev,
+        phone: "Phone number must be 10 digits",
+      }));
+    } else {
+      setErrors((prev) => ({
+        ...prev,
+        phone: "",
+      }));
+    }
+  }
 };
 
 const handleSubmit = (e) => {
   e.preventDefault();
 
+  if (errors.email || errors.phone) {
+    return;
+  }
+
   console.log(contactData);
+  alert("Message Sent Successfully!");
 };
   return (
     <footer className="footer" id="footer">
@@ -51,7 +93,6 @@ const handleSubmit = (e) => {
   </div>
 
   <div className="contact-item">
-   
     <span>✉️</span>
     <p>info@fortiusacademy.com</p>
   </div>
@@ -74,12 +115,12 @@ const handleSubmit = (e) => {
             Register your child or send us an enquiry.
           </p>
 
-         <form
+        <form
   className="footer-form"
   onSubmit={handleSubmit}
 >
 
-           <input
+          <input
   type="text"
   name="parentName"
   placeholder="Parent Name"
@@ -94,6 +135,9 @@ const handleSubmit = (e) => {
   value={contactData.email}
   onChange={handleChange}
 />
+{errors.email && (
+  <p className="error-text">{errors.email}</p>
+)}
 
             <input
   type="tel"
@@ -102,6 +146,9 @@ const handleSubmit = (e) => {
   value={contactData.phone}
   onChange={handleChange}
 />
+{errors.phone && (
+  <p className="error-text">{errors.phone}</p>
+)}
 
             <textarea
   rows="4"
@@ -111,10 +158,18 @@ const handleSubmit = (e) => {
   onChange={handleChange}
 ></textarea>
 
-            <button type="submit">
-              Send Message
-              <FaPaperPlane />
-            </button>
+            <button
+  type="submit"
+  disabled={
+    !contactData.parentName ||
+    !contactData.email.includes("@") ||
+    contactData.phone.length !== 10 ||
+    !contactData.message
+  }
+>
+  Send Message
+  <FaPaperPlane/>
+</button>
 
           </form>
 

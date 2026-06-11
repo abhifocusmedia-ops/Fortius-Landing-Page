@@ -5,18 +5,83 @@ function RegisterModal({ isOpen, onClose }) {
     if (!isOpen) return null;
 
 const [formData, setFormData] = useState({
-  parentName: "",
-  childName: "",
-  childAge: "",
-  phone: "",
-  activity: "",
+        parentName: "",
+        childName: "",
+        childAge: "",
+        phone: "",
+        activity: "",
+});
+const [errors, setErrors] = useState({
+        phone: "",
+        childAge: "",
 });
 
 const handleChange = (e) => {
-  setFormData({
-    ...formData,
-    [e.target.name]: e.target.value,
-  });
+const { name, value } = e.target;
+
+    setFormData({...formData,
+        [name]: value,
+        });
+
+    if (name === "phone") {
+        if (value.length > 0 && value.length !== 10) {
+            setErrors((prev) => ({...prev,
+            phone: "Phone number must be 10 digits",
+            }));
+        } 
+        else {
+            setErrors((prev) => ({...prev,
+            phone: "",
+            }));
+        }
+}
+
+    if (name === "childAge") {
+        if (value && (value < 4 || value > 16)) {
+        setErrors((prev) => ({...prev,
+            childAge: "Age must be between 4 and 16",
+        }));
+        } 
+        else {
+            setErrors((prev) => ({...prev,
+                childAge: "",
+            }));
+        }
+    }
+};
+
+const handleSubmit = (e) => {
+        e.preventDefault();
+
+    if (
+        !formData.parentName ||
+        !formData.childName ||
+        !formData.childAge ||
+        !formData.phone ||
+        !formData.activity
+    )
+    {
+    alert("Please fill all fields");
+    return;
+    }
+
+    if (errors.phone || errors.childAge) {
+    return;
+    }
+
+    console.log(formData);
+
+    alert("Registration Submitted Successfully!");
+
+    setFormData({
+        parentName: "",
+        childName: "",
+        childAge: "",
+        phone: "",
+        activity: "",
+    });
+
+    onClose();
 };
 
     return (
@@ -29,96 +94,63 @@ const handleChange = (e) => {
 
         <h2>Register For Summer Camp</h2>
 
-        <form
-  className="register-form"
-  onSubmit={(e) => {
-    e.preventDefault();
+        <form className="register-form"
+        onSubmit={handleSubmit}>
+            <input type="text"
+            name="parentName"
+            placeholder="Parent Name"
+            value={formData.parentName}
+            onChange={handleChange}/>
 
-    if (
-  !formData.parentName ||
-  !formData.childName ||
-  !formData.childAge ||
-  !formData.phone ||
-  !formData.activity
-) {
-  alert("Please fill all fields");
-  return;
-}
-    if (formData.phone.length !== 10) {
-  alert("Phone number must be 10 digits");
-  return;
-}
+            <input type="text"
+            name="childName"
+            placeholder="Child Name"
+            value={formData.childName}
+            onChange={handleChange}/>
+            <input type="number"
+            name="childAge"
+            placeholder="Child Age"
+            value={formData.childAge}
+            onChange={handleChange}/>
+            {
+            errors.childAge && (
+            <p className="error-text">{errors.childAge}</p>
+            )}
 
- if (formData.childAge < 4 || formData.childAge > 16) {
-  alert("Age must be between 4 and 16");
-  return;
-}
+            <input type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            value={formData.phone}
+            onChange={handleChange}/>
 
-   
-console.log(formData);
-alert("Registration Submitted Successfully!");
-   setFormData({
-  parentName: "",
-  childName: "",
-  childAge: "",
-  phone: "",
-  activity: "",
-});
+            {errors.phone && (
+            <p className="error-text">{errors.phone}</p>
+            )}
 
-    onClose();
-  }}
->
-<input
-  type="text"
-  name="parentName"
-  placeholder="Parent Name"
-  value={formData.parentName}
-  onChange={handleChange}
-/>
-
-        <input
-  type="text"
-  name="childName"
-  placeholder="Child Name"
-  value={formData.childName}
-  onChange={handleChange}
-/>
-        <input
-  type="number"
-  name="childAge"
-  placeholder="Child Age"
-  value={formData.childAge}
-  onChange={handleChange}
-/>
-
-        <input
-  type="tel"
-  name="phone"
-  placeholder="Phone Number"
-  value={formData.phone}
-  onChange={handleChange}
-/>
-
-       <select
-  name="activity"
-  value={formData.activity}
-  onChange={handleChange}
->
-  <option value="">Select Activity</option>
-  <option>Football</option>
-  <option>Badminton</option>
-  <option>Yoga</option>
-  <option>Dance</option>
+<select name="activity"
+    value={formData.activity}
+    onChange={handleChange}>
+    <option value="">Select Activity</option>
+    <option>Football</option>
+    <option>Badminton</option>
+    <option>Yoga</option>
+    <option>Dance</option>
 </select>
 
-        <button
-            type="submit"
-            className="submit-btn"
-        >
-            Submit Registration
-        </button>
+    <button type="submit" className="submit-btn" disabled={
+    !formData.parentName ||
+    !formData.childName ||
+    !formData.childAge ||
+    formData.childAge < 4 ||
+    formData.childAge > 16 ||
+    !formData.phone ||
+    formData.phone.length !== 10 ||
+    !formData.activity
+    }>
+    Submit Registration
+    </button>
 
-        </form>
+</form>
 
     </div>
     </div>
