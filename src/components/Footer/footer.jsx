@@ -209,7 +209,7 @@ const handleSubmit = (e) => {
       </div>
 
       <div className="footer-bottom">
-        © 2026 Fortius Summer Camp. All Rights Reserved.
+        © 2026 Fortius. All Rights Reserved.
       </div>
 
     </footer>
