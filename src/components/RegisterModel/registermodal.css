@@ -10,6 +10,13 @@
     z-index:9999;
 }
 
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
 .modal-box{
     width:500px;
     max-width:90%;
@@ -61,4 +68,8 @@
     border-radius:10px;
     cursor:pointer;
     font-weight:600;
+}
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

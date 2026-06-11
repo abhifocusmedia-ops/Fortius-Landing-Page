@@ -234,3 +234,14 @@
     width: 180px;
   }
 }
+
+.error-text {
+  color: red !important;
+  font-size: 0.85rem;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
