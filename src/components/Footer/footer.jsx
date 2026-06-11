@@ -3,6 +3,7 @@ import "./footer.css";
 import logo from "/assets/logos/fortius-logo.png";
 import { FaPaperPlane } from "react-icons/fa";
 
+
 function Footer() {
 
   const [errors, setErrors] = useState({
@@ -126,6 +127,8 @@ const handleSubmit = (e) => {
   </div>
 
 </div>
+
+
 
         </div>
 

@@ -64,6 +64,11 @@ function Hero({ setShowModal }) {
                 <FaFutbol /> Indoor Soccer
             </span>
 
+            <span>
+                <GiMeditation /> Fun & Fitness
+            </span>
+
+
             </div>
 
             <div className="hero-buttons">
@@ -83,9 +88,14 @@ function Hero({ setShowModal }) {
         <div className="hero-right">
 
     <div className="floating-card offer-card">
-        <h3>🔥 Early Bird</h3>
-        <h2>15% OFF</h2>
-        <p>Limited Time Offer</p>
+        <h3>📅 Daily Drop-In</h3>
+        <div className="card-price">
+            Full Day - $80
+        </div>
+
+        <div className="card-price">
+            Half Day - $60
+        </div>
     </div>
 
     <div className="floating-card timing-card">
