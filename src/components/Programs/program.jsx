@@ -1,11 +1,12 @@
 import "./programs.css";
 import { motion } from "framer-motion";
 import Programbg from "/assets/images/banner.png";
+import FunandFitness from "/assets/images/fun and fitness.jpg";
 
 const programs = [
     {
-    title: "Football",
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018",
+    title: "Fun & Fitness",
+    image: FunandFitness,
     description: "Learn teamwork, coordination and football skills through fun training sessions."
     },
     {

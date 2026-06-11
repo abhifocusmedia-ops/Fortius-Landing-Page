@@ -1,11 +1,11 @@
 import "./gallery.css";
 import { motion } from "framer-motion";
-import soccer from "/assets/images/soccer.jpg";
+import FunandFitness from "/assets/images/fun and fitness.jpg";
 import badminton from "/assets/images/badminton.jpg";
 import hero from "/assets/images/hero-image.jpg";
 import yoga from "/assets/images/yoga.jpg";
 import dance from "/assets/images/dance.jpg";
-import download from "/assets/images/download.jpg";
+import group from "/assets/images/group.jpg";
 import fitness from "/assets/images/fitness.avif";
 import free from "/assets/images/free.jpg";
 
@@ -13,8 +13,8 @@ import free from "/assets/images/free.jpg";
 function Gallery() {
   const images = [
     {
-      title: "Football Training",
-      image: soccer,
+      title: "Fun & Fitness",
+      image: FunandFitness,
     },
     {
       title: "Badminton Coaching",
@@ -61,9 +61,9 @@ function Gallery() {
   <motion.div
   className="gallery-card small"
   {...cardAnimation}>
-      <img src={soccer} alt="Football Training" />
+      <img src={FunandFitness} alt="Football Training" />
       <div className="gallery-overlay">
-        <h3>Football Training</h3>
+        <h3>Fun & Fitness</h3>
       </div>
     </motion.div>
 
@@ -131,7 +131,7 @@ function Gallery() {
 
     <motion.div className="gallery-card small"
   {...cardAnimation}>
-      <img src={free} alt="Camp Event" />
+      <img src={group} alt="Camp Event" />
       <div className="gallery-overlay">
         <h3>Camp Event</h3>
       </div>

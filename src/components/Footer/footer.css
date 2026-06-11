@@ -233,6 +233,14 @@
   .footer-logo {
     width: 180px;
   }
+  .contact-item {
+  justify-content: flex-start;
+
+}
+.footer-contact-info {
+  width: fit-content;
+  margin: 0 auto;
+}
 }
 
 .error-text {
@@ -245,3 +253,5 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+
