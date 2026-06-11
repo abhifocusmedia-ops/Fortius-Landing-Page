@@ -83,7 +83,7 @@ function Hero({ setShowModal }) {
         <div className="hero-right">
 
     <div className="floating-card offer-card">
-        <h3>🔥 Early Bird</h3>
+        <h3>🔥 Early Birds</h3>
         <h2>15% OFF</h2>
         <p>Limited Time Offer</p>
     </div>
