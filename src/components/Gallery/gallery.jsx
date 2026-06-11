@@ -5,9 +5,9 @@ import badminton from "/assets/images/badminton.jpg";
 import hero from "/assets/images/hero-image.jpg";
 import yoga from "/assets/images/yoga.jpg";
 import dance from "/assets/images/dance.jpg";
-import download from "/assets/images/download.jpg"
-import fitness from "/assets/images/fitness.avif"
-import free from "/assets/images/free.jpg"
+import download from "/assets/images/download.jpg";
+import fitness from "/assets/images/fitness.avif";
+import free from "/assets/images/free.jpg";
 
 
 function Gallery() {
