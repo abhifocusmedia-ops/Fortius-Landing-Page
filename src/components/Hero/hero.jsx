@@ -87,17 +87,6 @@ function Hero({ setShowModal }) {
         {/* Right Side Cards */}
         <div className="hero-right">
 
-    <div className="floating-card offer-card">
-        <h3>📅 Daily Drop-In</h3>
-        <div className="card-price">
-            Full Day - $80
-        </div>
-
-        <div className="card-price">
-            Half Day - $60
-        </div>
-    </div>
-
     <div className="floating-card timing-card">
         <h3>⏰ Half Day</h3>
         <h2>9 AM - 12 PM</h2>
@@ -115,6 +104,19 @@ function Hero({ setShowModal }) {
             $350 / Week
         </div>
     </div>
+
+    <div className="floating-card offer-card">
+        <h3>📅 Daily Drop-In</h3>
+
+        <div className="card-price">
+            Full Day - $80
+        </div>
+
+        <div className="card-price">
+        Half Day - $60
+        </div>
+    </div>
+
 
     </div>
 
