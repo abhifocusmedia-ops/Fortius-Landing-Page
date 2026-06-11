@@ -63,8 +63,31 @@ const handleSubmit = (e) => {
     return;
   }
 
-  console.log(contactData);
-  alert("Message Sent Successfully!");
+  fetch(
+    "https://script.google.com/macros/s/AKfycbxwbT5b96FJFo-cNoTj69gPKSmKlumtrIKlDIf3Ic1A1Kbb1ZUIgHWg4pycCLICS_zn/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        formType: "contact",
+        ...contactData,
+      }),
+    }
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      alert("Message Sent Successfully!");
+
+      setContactData({
+        parentName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+      alert("Something went wrong");
+    });
 };
   return (
     <footer className="footer" id="footer">
