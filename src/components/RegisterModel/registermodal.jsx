@@ -155,10 +155,11 @@ const handleSubmit = (e) => {
     value={formData.activity}
     onChange={handleChange}>
     <option value="">Select Activity</option>
-    <option>Football</option>
+    <option>Pickel Ball</option>
     <option>Badminton</option>
     <option>Yoga</option>
     <option>Dance</option>
+    <option>Fun & Fitness</option>
 </select>
 
     <button type="submit" className="submit-btn" disabled={
