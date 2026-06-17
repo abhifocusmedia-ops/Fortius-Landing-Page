@@ -1,7 +1,11 @@
 import "./programs.css";
 import { motion } from "framer-motion";
-import Programbg from "/assets/images/banner.png";
-import FunandFitness from "/assets/images/fun and fitness.jpg";
+import Programbg from "/assets/images/banner.webp";
+import FunandFitness from "/assets/images/fun and fitness.webp";
+import IndoorGames from "/assets/images/indoor-game.webp";
+import Dances from "/assets/images/Dances.webp";
+import yoga from "/assets/images/yoga.webp";
+import badminton from "/assets/images/badminton.webp";
 
 const programs = [
     {
@@ -11,17 +15,17 @@ const programs = [
     },
     {
     title: "Badminton",
-    image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea",
+    image: badminton,
     description: "Improve agility, focus and reflexes with exciting badminton coaching."
     },
     {
     title: "Yoga",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773",
+    image: yoga,
     description: "Build flexibility, balance and mindfulness through guided yoga practice."
     },
     {
     title: "Dance",
-    image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d",
+    image: Dances,
     description: "Express creativity and confidence through energetic dance sessions."
     },
     {
@@ -31,7 +35,7 @@ const programs = [
     },
     {
     title: "Indoor Games",
-    image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974",
+    image: IndoorGames,
     description: "Fun indoor activities that develop strategic thinking and teamwork."
     }
 ];
