@@ -1,13 +1,13 @@
 import "./gallery.css";
 import { motion } from "framer-motion";
-import FunandFitness from "/assets/images/fun and fitness.jpg";
-import badminton from "/assets/images/badminton.jpg";
-import hero from "/assets/images/hero-image.jpg";
-import yoga from "/assets/images/yoga.jpg";
-import dance from "/assets/images/dance.jpg";
-import group from "/assets/images/group.jpg";
-import fitness from "/assets/images/fitness.avif";
-import free from "/assets/images/free.jpg";
+import FunandFitness from "/assets/images/fun and fitness.webp";
+import badminton from "/assets/images/badminton.webp";
+import hero from "/assets/images/hero-image.webp";
+import yoga from "/assets/images/yoga.webp";
+import dance from "/assets/images/dance.webp";
+import group from "/assets/images/group.webp";
+import fitness from "/assets/images/fitness.webp";
+import free from "/assets/images/free.webp";
 
 
 function Gallery() {
