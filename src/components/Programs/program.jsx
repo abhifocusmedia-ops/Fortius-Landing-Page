@@ -6,6 +6,7 @@ import IndoorGames from "/assets/images/indoor-game.webp";
 import Dances from "/assets/images/Dances.webp";
 import yoga from "/assets/images/yoga.webp";
 import badminton from "/assets/images/badminton.webp";
+import ArtsAndCrafts from "/assets/images/arts and crafts.jpg";
 
 const programs = [
     {
@@ -30,7 +31,7 @@ const programs = [
     },
     {
     title: "Arts & Crafts",
-    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
+    image: ArtsAndCrafts,
     description: "Encourage imagination and creativity with engaging art activities."
     },
     {
